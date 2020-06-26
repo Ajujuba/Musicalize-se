@@ -73,16 +73,16 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#top" class="smoothScroll">Home</a></li>
-                         <li><a href="#about" class="smoothScroll">Alunos</a></li>
-                         <li><a href="#team" class="smoothScroll">Avisos</a></li>
-                         <li><a href="#courses" class="smoothScroll">Cursos</a></li>
+                         <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
+                         <li><a href="aluno.php" class="smoothScroll">Alunos</a></li>
+                         <li><a href="" class="smoothScroll">Avisos</a></li>
+                         <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="#testimonial" class="smoothScroll">Professores</a></li>
                          <li><a href="#contact" class="smoothScroll">Grade</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="#login"><i class="fa fa-user-circle"></i> Logout</a></li>
+                         <li><a href="classes/Conexao.php"><i class="fa fa-user-circle"></i> Logout</a></li>
                     </ul>
 
                   
@@ -112,78 +112,6 @@ https://templatemo.com/tm-516-known
           </div>
     </section>
 
-
-    
-     <!-- FOOTER -->
-     <footer id="footer">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Headquarter</h2>
-                              </div>
-                              <address>
-                                   <p>1800 dapibus a tortor pretium,<br> Integer nisl dui, ABC 12000</p>
-                              </address>
-
-                              <ul class="social-icon">
-                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="#" class="fa fa-twitter"></a></li>
-                                   <li><a href="#" class="fa fa-instagram"></a></li>
-                              </ul>
-
-                              <div class="copyright-text"> 
-                                   <p>Copyright &copy; 2019 Company Name</p>
-                                   
-                                   <p>Design: TemplateMo</p>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Contact Info</h2>
-                              </div>
-                              <address>
-                                   <p>+65 2244 1100, +66 1800 1100</p>
-                                   <p><a href="mailto:youremail.co">hello@youremail.co</a></p>
-                              </address>
-
-                              <div class="footer_menu">
-                                   <h2>Quick Links</h2>
-                                   <ul>
-                                        <li><a href="#">Career</a></li>
-                                        <li><a href="#">Investor</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Refund Policy</a></li>
-                                   </ul>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12">
-                         <div class="footer-info newsletter-form">
-                              <div class="section-title">
-                                   <h2>Newsletter Signup</h2>
-                              </div>
-                              <div>
-                                   <div class="form-group">
-                                        <form action="#" method="get">
-                                             <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-                                             <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
-                                        </form>
-                                        <span><sup>*</sup> Please note - we do not spam your email.</span>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-                    
-               </div>
-          </div>
-     </footer>
 
      
 
