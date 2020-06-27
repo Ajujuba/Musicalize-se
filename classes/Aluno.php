@@ -12,10 +12,10 @@ class Aluno
     public $adm_token;
 
 
-    public function __construct($id = false)
+    public function __construct($idaluno = false)
     {
-        if ($id) {
-            $this->id = $id;
+        if ($idaluno) {
+            $this->idaluno = $idaluno;
             $this->carregar();
         }
     }
@@ -31,10 +31,10 @@ class Aluno
 
     public function carregar()
     {
-        $query = "SELECT idaluno, email, nome, telefone, rg, cpf FROM aluno WHERE id = :id";
+        $query = "SELECT idaluno, email, nome, telefone, rg, cpf FROM aluno WHERE idaluno = :idaluno";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':idaluno', $this->idaluno);
         $stmt->execute();
         $linha = $stmt->fetch();
         $this->nome = $linha['nome'];
@@ -61,10 +61,10 @@ class Aluno
 
     public function excluir()
     {
-        $query = "DELETE FROM categorias WHERE id = :id";
+        $query = "DELETE FROM aluno WHERE idaluno = :idaluno";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':idaluno', $this->idaluno);
         $stmt->execute();
     }
 

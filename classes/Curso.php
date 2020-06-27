@@ -3,23 +3,23 @@
 class Curso
 {
 
-    public $id;
+    public $idcurso;
     public $nome;
     public $descricao;
     public $adm_token;
 
 
-    public function __construct($id = false)
+    public function __construct($idcurso = false)
     {
-        if ($id) {
-            $this->id = $id;
+        if ($idcurso) {
+            $this->idcurso = $idcurso;
             $this->carregar();
         }
     }
 
     public static function listar()
     {
-        $query = "SELECT idcurso, nome, descricao FROM curso ORDER BY nome";
+        $query = "SELECT idcurso, nome, descricao, adm_token FROM curso ORDER BY nome";
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
@@ -28,13 +28,14 @@ class Curso
 
     public function carregar()
     {
-        $query = "SELECT idaluno, email, nome, telefone, rg, cpf FROM aluno WHERE id = :id";
+        $query = "SELECT idcurso, nome, descricao, adm_token FROM curso WHERE idcurso = :idcurso";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':idcurso', $this->idcurso);
         $stmt->execute();
         $linha = $stmt->fetch();
         $this->nome = $linha['nome'];
+        $this->descricao = $linha['descricao'];
     }
 
     public function inserir()
@@ -50,20 +51,21 @@ class Curso
 
     public function atualizar()
     {
-        $query = "UPDATE categorias set nome = :nome WHERE id = :id";
+        $query = "UPDATE curso SET nome = :nome, descricao = :descricao WHERE idcurso = :idcurso";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':nome', $this->nome);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':descricao', $this->descricao);
+        $stmt->bindValue(':idcurso', $this->idcurso);
         $stmt->execute();
     }
 
     public function excluir()
     {
-        $query = "DELETE FROM categorias WHERE id = :id";
+        $query = "DELETE FROM curso WHERE idcurso = :idcurso";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':idcurso', $this->idcurso);
         $stmt->execute();
     }
 

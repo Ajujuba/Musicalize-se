@@ -1,3 +1,13 @@
+<?php require_once 'global.php' ?>
+<?php
+    try {
+        $idcurso = $_GET['id'];
+        $curso = new Curso($idcurso);
+     //    $listaAdm = Administrador::listar();
+    } catch (Exception $e) {
+        Erro::trataErro($e);
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,16 +22,18 @@ https://templatemo.com/tm-516-known
 -->
 <style type="text/css">
    #contact-form button[type='button']:hover {
-     background: transparent;
-     border-color: white;
+     background: #29ca8e;
+     border-color: #29ca8e;
      color: #ffffff;
-     height:50px;
+     height:40px;
    }
 
    #contact-form button[type='button'] {
      border-radius: 50px;
      border: 1px solid transparent;
-     height:50px;
+     border-color: #29ca8e;
+     color: #29ca8e;
+     height:40px;
    }
 
 </style>
@@ -46,13 +58,13 @@ https://templatemo.com/tm-516-known
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
      <!-- PRE LOADER -->
-     <section class="preloader">
+     <!-- <section class="preloader">
           <div class="spinner">
 
                <span class="spinner-rotate"></span>
                
           </div>
-     </section>
+     </section> -->
 
 
      <!-- MENU -->
@@ -84,39 +96,36 @@ https://templatemo.com/tm-516-known
                     <ul class="nav navbar-nav navbar-right">
                          <li><a href="classes/Conexao.php"><i class="fa fa-user-circle"></i> Logout</a></li>
                     </ul>
-
-                  
                     
                </div>
 
           </div>
+         
     </section>
-
-     <!-- HOME -->
-    <section id="home">
-          <div class="row">
-
-                    <div class="owl-carousel owl-theme home-slider">
-                         <div class="item item-first">
-                              <div class="caption">
-                                   <div class="container">
-                                        <div class="col-md-6 col-sm-12">
-                                             <h1>BEM-VINDO ADMINISTRADOR</h1>
-                                             <h3>Neste módulo você pode gerenciar as informações do sistema, realizando alterações que julgar pertinentes.</h3>
-                                             <a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a>
-                                        </div>
-                                   </div>
-                              </div>
-                         </div>
+    <section style="justify-content: center">
+    <div class="container">
+    <div class="row">
+          <div class="col-md">
+              <br>
+              <form action="curso-editar-post.php" method="POST">
+              <input type="hidden" name="idcurso" value="<?php echo $curso->idcurso ?>">
+                    <div class="form-group">
+                         <label for="nome">Nome</label>
+                         <input type="text" class="form-control" id="nome" name="nome" value="<?php echo $curso->nome ?>" aria-describedby="emailHelp" placeholder="Nome do Curso"  required>
                     </div>
-          </div>
+                    <div class="form-group">
+                        <label for="email">Descrição do Curso</label>
+                            <textarea class="form-control" rows="6"  placeholder="Informe a descrição do curso" name="descricao" id="descricao" required=""><?php echo $curso->descricao?></textarea>
+                    </div>
+                    <div class="modal-footer">
+                         <a href="curso.php" class="btn btn-secondary" >Voltar</a>
+                         <button type="submit" class="btn btn-info">Gravar</button>
+                    </div>
+                </form>
     </section>
 
-
-     
-
-     <!-- SCRIPTS -->
-     <script src="js/jquery.js"></script>
+    <!-- SCRIPTS -->
+    <script src="js/jquery.js"></script>
      <script src="js/bootstrap.min.js"></script>
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
