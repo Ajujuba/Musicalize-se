@@ -116,7 +116,7 @@ https://templatemo.com/tm-516-known
                     <div class="modal-dialog" role="document">
                          <div class="modal-content">
                          <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Aluno</h5>
+                              <h5 class="modal-title" id="exampleModalLabel">Adicionar Aluno</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                               <span aria-hidden="true">&times;</span>
                               </button>

@@ -88,6 +88,15 @@ class Professor
         $stmt->execute();
     }
 
+    public static function verifica($curso)
+    {
+        $query = "SELECT idprofessor, nome FROM professor where professor.curso = $curso";
+        $conexao = Conexao::pegarConexao();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
 
 
 }

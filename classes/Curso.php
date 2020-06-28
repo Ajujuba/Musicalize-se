@@ -26,6 +26,15 @@ class Curso
         return $lista;
     }
 
+    public static function verifica($nome)
+    {
+        $query = "SELECT idcurso, nome FROM curso where curso.nome LIKE '$nome' ";
+        $conexao = Conexao::pegarConexao();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
     public function carregar()
     {
         $query = "SELECT idcurso, nome, descricao, adm_token FROM curso WHERE idcurso = :idcurso";
