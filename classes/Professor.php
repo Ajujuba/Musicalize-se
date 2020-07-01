@@ -51,7 +51,7 @@ class Professor
 
     public function inserir()
     {
-        $query = "INSERT INTO professor (nome, email, rg, cpf, telefone, senha, curso, adm_token) VALUES (:nome, :email, :rg, :cpf, :telefone, :senha, :curso , :adm_token)";
+        $query = "INSERT INTO professor (nome, email, rg, cpf, telefone, senha, adm_token) VALUES (:nome, :email, :rg, :cpf, :telefone, :senha, :adm_token)";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
         $stmt->bindValue(':nome', $this->nome);
@@ -60,7 +60,7 @@ class Professor
         $stmt->bindValue(':cpf', $this->cpf);
         $stmt->bindValue(':telefone', $this->telefone);
         $stmt->bindValue(':senha', $this->senha);
-        $stmt->bindValue(':curso', $this->curso);
+        // $stmt->bindValue(':curso', $this->curso);
         $stmt->bindValue(':adm_token', $this->adm_token);
         $stmt->execute();
     }

@@ -1,14 +1,14 @@
 <?php
     require_once 'global.php';
-        $curso = $_POST['curso'];
+        // $curso = $_POST['curso'];
 
     try {
 
-        $lista = Professor::verifica($curso);
-        if($lista){
-            echo "<script>alert('Não é possível registrar esse curso para esse professor pois ele já está sendo lecionado por outro professor!');";
-            echo "javascript:window.location='professor.php';</script>";
-        }else{
+        // $lista = Professor::verifica($curso);
+        // if($lista){
+        //     echo "<script>alert('Não é possível registrar esse curso para esse professor pois ele já está sendo lecionado por outro professor!');";
+        //     echo "javascript:window.location='professor.php';</script>";
+        // }else{
             $nome = $_POST['nome'];
             $email = $_POST['email'];
             $rg = $_POST['rg'];
@@ -30,7 +30,7 @@
             $professor->inserir();
 
             header('Location: professor.php');
-        }
+        // }
         
 
 

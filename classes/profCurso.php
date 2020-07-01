@@ -1,41 +1,46 @@
 <?php
 
-class Curso
+class profCurso
 {
 
-    public $idcurso;
-    public $nome;
-    public $descricao;
-    public $adm_token;
+    public $professor_idprofessor;
+    public $curso_idcurso;
 
 
-    public function __construct($idcurso = false)
+    // public function __construct($curso_idcurso = false, $professor_idprofessor = false)
+    // {
+    //     if ($professor_idprofessor) {
+    //         $this->idcurso = $idcurso;
+    //         $this->carregar();
+    //     }
+    // }
+
+    public static function listar($idprofessor)
     {
-        if ($idcurso) {
-            $this->idcurso = $idcurso;
-            $this->carregar();
-        }
-    }
-
-    public static function listar()
-    {
-        $query = "SELECT idcurso, nome, descricao, adm_token FROM curso ORDER BY nome";
+        $query = "SELECT pc.professor_idprofessor, pc.curso_idcurso, c.nome as curso_nome, p.nome as professor_nome
+        FROM professor_curso pc
+        INNER JOIN curso c ON pc.curso_idcurso = c.idcurso
+        INNER JOIN professor p ON  pc.professor_idprofessor = p.idprofessor
+        WHERE p.idprofessor = $idprofessor
+        ORDER BY p.nome";
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
     }
 
-
-    public static function verifica($nome)
+    public static function verifica_prof_curso($curso_idcurso, $idprofessor)
     {
-        $query = "SELECT idcurso, nome FROM curso where curso.nome LIKE '$nome' ";
+        $query = "SELECT curso_idcurso FROM professor_curso 
+        WHERE professor_curso.curso_idcurso = $curso_idcurso
+        AND professor_curso.professor_idprofessor = $idprofessor";
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
         return $lista;
     }
 
+    
     public function carregar()
     {
         $query = "SELECT idcurso, nome, descricao, adm_token FROM curso WHERE idcurso = :idcurso";
@@ -50,12 +55,11 @@ class Curso
 
     public function inserir()
     {
-        $query = "INSERT INTO curso (nome,descricao, adm_token) VALUES (:nome, :descricao, :adm_token)";
+        $query = "INSERT INTO professor_curso (professor_idprofessor, curso_idcurso) VALUES (:professor_idprofessor, :curso_idcurso)";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':nome', $this->nome);
-        $stmt->bindValue(':descricao', $this->descricao);
-        $stmt->bindValue(':adm_token', $this->adm_token);
+        $stmt->bindValue(':professor_idprofessor', $this->professor_idprofessor);
+        $stmt->bindValue(':curso_idcurso', $this->curso_idcurso);
         $stmt->execute();
     }
 
@@ -79,10 +83,7 @@ class Curso
         $stmt->execute();
     }
 
-    public function carregarProdutos()
-    {
-        $this->produtos = Produto::listarPorCategoria($this->id);
-    }
+
 
 
 

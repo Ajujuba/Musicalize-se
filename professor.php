@@ -12,11 +12,11 @@
         Erro::trataErro($e);
     }
 
-    try {
-        $listaCurso = Curso::listar();
-    } catch (Exception $e) {
-        Erro::trataErro($e);
-    }
+    // try {
+    //     $listaCurso = Curso::listar();
+    // } catch (Exception $e) {
+    //     Erro::trataErro($e);
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -159,14 +159,6 @@ https://templatemo.com/tm-516-known
                                     <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha Padrão do Professor"  required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Curso</label>
-                                    <select name="curso" id="curso">
-                                        <?php foreach ($listaCurso as $linha): ?>
-                                            <option value="<?php echo $linha['idcurso'] ?>"><?php echo $linha['nome'] ?></option>
-                                        <?php endforeach ?>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label for="email">Administrador Responsável</label>
                                     <select name="adm_token" id="adm_token">
                                         <?php foreach ($listaAdm as $linha): ?>
@@ -212,7 +204,7 @@ https://templatemo.com/tm-516-known
                                    <td><?php echo $linha['email'] ?></td>
                                    <td><?php echo $linha['cpf'] ?></td>
                                    <td><?php echo $linha['telefone'] ?></td>
-                                   <td><?php echo $linha['curso_nome'] ?></td>
+                                   <td><a href="prof-curso.php?id=<?php echo $linha['idprofessor'] ?>" class="btn btn-success">Curso</a></td>
                                    <td><a href="prof-editar.php?id=<?php echo $linha['idprofessor'] ?>" class="btn btn-info">Editar</a></td>
                                    <td><a href="prof-excluir.php?id=<?php echo $linha['idprofessor'] ?>" class="btn btn-danger">Excluir</a></td>
                                    </tr>

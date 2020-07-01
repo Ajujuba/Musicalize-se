@@ -128,7 +128,7 @@ https://templatemo.com/tm-516-known
                         <input type="text" class="form-control phone-ddd-mask" id="telefone" name="telefone" value="<?php echo $professor->telefone ?>" placeholder="Telefone do professor"  required>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <a href="professor.php" class="btn btn-secondary" >Voltar</a>
                         <button type="submit" class="btn btn-info">Gravar</button>
                     </div>
                 </form>
