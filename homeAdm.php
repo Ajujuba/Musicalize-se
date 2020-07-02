@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 
 Known Template 
@@ -78,7 +78,9 @@ https://templatemo.com/tm-516-known
                          <li><a href="aviso.php" class="smoothScroll">Avisos</a></li>
                          <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="professor.php" class="smoothScroll">Professores</a></li>
-                         <li><a href="#contact" class="smoothScroll">Grade</a></li>
+                         <li><a href="#contact" class="smoothScroll">Classe</a></li>
+                         <li><a href="contato.php" class="smoothScroll">Contatos</a></li>
+                         <li><a href="preAluno.php" class="smoothScroll">Pré-Matrículas</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -103,7 +105,7 @@ https://templatemo.com/tm-516-known
                                         <div class="col-md-6 col-sm-12">
                                              <h1>BEM-VINDO ADMINISTRADOR</h1>
                                              <h3>Neste módulo você pode gerenciar as informações do sistema, realizando alterações que julgar pertinentes.</h3>
-                                             <a href="#feature" class="section-btn btn btn-default smoothScroll">Discover more</a>
+                                             
                                         </div>
                                    </div>
                               </div>

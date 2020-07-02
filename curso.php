@@ -17,7 +17,7 @@
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 
 Known Template 
@@ -90,12 +90,14 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
+                    <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
                          <li><a href="aluno.php" class="smoothScroll">Alunos</a></li>
                          <li><a href="aviso.php" class="smoothScroll">Avisos</a></li>
                          <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="professor.php" class="smoothScroll">Professores</a></li>
-                         <li><a href="#contact" class="smoothScroll">Grade</a></li>
+                         <li><a href="#contact" class="smoothScroll">Classe</a></li>
+                         <li><a href="contato.php" class="smoothScroll">Contatos</a></li>
+                         <li><a href="preAluno.php" class="smoothScroll">Pré-Matrículas</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -109,6 +111,9 @@ https://templatemo.com/tm-516-known
     </section>
 <div class="container">
     <div class="row">
+          <br>
+          <center><h3>Gerenciador de cursos</h3></center>
+          <br>
           <div class="col-md-4">
               <br>
                <form id="contact-form">
