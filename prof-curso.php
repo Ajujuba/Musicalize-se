@@ -23,7 +23,7 @@
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 
 Known Template 
@@ -96,12 +96,14 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
+                    <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
                          <li><a href="aluno.php" class="smoothScroll">Alunos</a></li>
                          <li><a href="aviso.php" class="smoothScroll">Avisos</a></li>
                          <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="professor.php" class="smoothScroll">Professores</a></li>
-                         <li><a href="#contact" class="smoothScroll">Grade</a></li>
+                         <li><a href="#contact" class="smoothScroll">Classe</a></li>
+                         <li><a href="contato.php" class="smoothScroll">Contatos</a></li>
+                         <li><a href="preAluno.php" class="smoothScroll">Pré-Matrículas</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -116,6 +118,9 @@ https://templatemo.com/tm-516-known
 
     <div class="container">
         <div class="row">
+        <br><br>
+          <center><h3>Adicionar um curso para esse professor</h3></center>
+          <br>
             <div class="col-md">
                <br>
                <br>
@@ -143,13 +148,16 @@ https://templatemo.com/tm-516-known
 
     <div class="container">
           <div class="row">
-               <div class="col-md-10">
+          <br>
+          <center><h3>Cursos pertencentes ao professor</h3></center>
+          <br>
+               <div class="col-md">
                     <div class="box">
                     <br>
                          <table class="table">
                               <thead>
                                    <tr>
-                                        <th text-align="center">Professor</th>
+                                        <th >Professor</th>
                                         <th>Cursos</th>
                                    </tr>
                               </thead>
