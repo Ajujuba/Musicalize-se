@@ -3,7 +3,6 @@
     try {
         $id = $_GET['id'];
         $preAluno = new preAluno($id);
-     //    $listaAdm = Administrador::listar();
     } catch (Exception $e) {
         Erro::trataErro($e);
     }

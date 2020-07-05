@@ -4,7 +4,7 @@
     try {
 
         $id = $_POST['id'];
-        $status = $_POST['status'];
+        $status = $_POST['status']; 
         
 
         $preAluno = new preAluno($id);

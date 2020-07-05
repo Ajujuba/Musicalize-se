@@ -60,15 +60,6 @@ class preAluno
         $stmt->execute();
     }
 
-    public function excluir()
-    {
-        $query = "DELETE FROM curso WHERE idcurso = :idcurso";
-        $conexao = Conexao::pegarConexao();
-        $stmt = $conexao->prepare($query);
-        $stmt->bindValue(':idcurso', $this->idcurso);
-        $stmt->execute();
-    }
-
 
 
 
