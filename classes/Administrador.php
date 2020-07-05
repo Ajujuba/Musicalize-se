@@ -64,9 +64,14 @@ class Administrador
         $stmt->execute();
     }
 
-    public function carregarProdutos()
+    public function validar($token, $senha)
     {
-        $this->produtos = Produto::listarPorCategoria($this->id);
+        $query = "SELECT * FROM adm
+        WHERE token = $token AND senha LIKE '$senha'";
+        $conexao = Conexao::pegarConexao();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetch();
+        return $lista;
     }
 
 

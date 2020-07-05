@@ -676,15 +676,14 @@ https://templatemo.com/tm-516-known
                                    </button>
                               </div>
                               <div class="modal-body">
-                                   <form action="homeAdm.php">
+                                   <form  action="openAdm.php" method="POST" name="loginAdm">
                                         <div class="form-group">
-                                          <label for="exampleInputEmail1">Endereço de email</label>
-                                          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Seu email">
-                                          <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                                          <label for="token">Nº do Token</label>
+                                          <input type="text" class="form-control" id="token" name="token"  placeholder="Seu token">
                                         </div>
                                         <div class="form-group">
-                                          <label for="exampleInputPassword1">Senha</label>
-                                          <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+                                          <label for="senha">Senha</label>
+                                          <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua senha">
                                         </div>
                                   
                               </div>
