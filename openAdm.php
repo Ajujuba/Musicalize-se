@@ -23,7 +23,7 @@ bem sucedida, ou seja se ela estiver encontrado algum registro idêntico o seu v
 será igual a 1, se não, se não tiver registros seu valor será 0. Dependendo do 
 resultado ele redirecionará para a página site.php ou retornara  para a página 
 do formulário inicial para que se possa tentar novamente realizar o login */
-if(isset($result) != false)
+if($result  != false)
 {
   $_SESSION['token'] = $token;
   $_SESSION['senha'] = $senha;
