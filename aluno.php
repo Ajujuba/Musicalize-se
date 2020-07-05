@@ -5,13 +5,19 @@
     } catch(Exception $e) {
         Erro::trataErro($e);
     }
+
+    try {
+          $listaAdm = Administrador::listar();
+     } catch (Exception $e) {
+          Erro::trataErro($e);
+ }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 
 Known Template 
@@ -84,12 +90,14 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
+                    <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
                          <li><a href="aluno.php" class="smoothScroll">Alunos</a></li>
                          <li><a href="aviso.php" class="smoothScroll">Avisos</a></li>
                          <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="professor.php" class="smoothScroll">Professores</a></li>
-                         <li><a href="#contact" class="smoothScroll">Grade</a></li>
+                         <li><a href="#contact" class="smoothScroll">Classe</a></li>
+                         <li><a href="contato.php" class="smoothScroll">Contatos</a></li>
+                         <li><a href="preAluno.php" class="smoothScroll">Pré-Matrículas</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -104,6 +112,9 @@ https://templatemo.com/tm-516-known
     </section>
 <div class="container">
     <div class="row">
+         <br>
+          <center><h3>Gerenciador de alunos</h3></center>
+          <br>
           <div class="col-md-4">
           <br>
                <form id="contact-form">
@@ -122,7 +133,7 @@ https://templatemo.com/tm-516-known
                               </button>
                          </div>
                          <div class="modal-body">
-                              <form action="aluno-inserir.php">
+                              <form action="aluno-inserir.php" method="POST">
                                    <div class="form-group">
                                         <label for="email">Endereço de email</label>
                                         <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email do aluno" required>
@@ -142,6 +153,14 @@ https://templatemo.com/tm-516-known
                                    <div class="form-group">
                                         <label for="telefone">CPF</label>
                                         <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF do aluno"  required>
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="email">Administrador Responsável</label>
+                                        <select name="adm_token" id="adm_token">
+                                             <?php foreach ($listaAdm as $linha): ?>
+                                             <option value="<?php echo $linha['token'] ?>"><?php echo $linha['nome'] ?></option>
+                                             <?php endforeach ?>
+                                        </select>
                                    </div>
                           </div>
                                    <div class="modal-footer">
@@ -180,8 +199,8 @@ https://templatemo.com/tm-516-known
                                    <td><?php echo $linha['telefone'] ?></td>
                                    <td><?php echo $linha['rg'] ?></td>
                                    <td><?php echo $linha['cpf'] ?></td>
-                                   <td><a href="aluno-editar.php?id=<?php echo $linha['idaluno'] ?>" class="btn btn-info">Editar</a></td>
-                                   <td><a href="aluno-excluir.php?id=<?php echo $linha['idaluno'] ?>" class="btn btn-danger">Excluir</a></td>
+                                   <td><a href="aluno-editar.php?id=<?php echo $linha['idaluno']?>" class="btn btn-info">Editar</a></td>
+                                   <td><a href="aluno-excluir.php?id=<?php echo $linha['idaluno']?>" class="btn btn-danger">Excluir</a></td>
                                    </tr>
                               <?php endforeach ?>
                          </tbody>
@@ -200,8 +219,8 @@ https://templatemo.com/tm-516-known
      <script src="js/custom.js"></script>
      <script type="text/javascript"> 
             $( document ).ready(function() {
-                $('#telefone').mask('(00) 0 0000-0000');
-                $('#cpf').mask('000.000.000.-00');
+                $('#telefone').mask('(00) 00000-0000');
+                $('#cpf').mask('000.000.000-00');
             });
     </script>
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

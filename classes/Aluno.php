@@ -38,24 +38,37 @@ class Aluno
         $stmt->execute();
         $linha = $stmt->fetch();
         $this->nome = $linha['nome'];
+        $this->email = $linha['email'];
+        $this->telefone = $linha['telefone'];
+        $this->rg = $linha['rg'];
+        $this->cpf = $linha['cpf'];
     }
 
     public function inserir()
     {
-        $query = "INSERT INTO aluno (nome) VALUES (:nome)";
+        $query = "INSERT INTO aluno (email, nome, telefone, rg, cpf, adm_token) VALUES (:email, :nome, :telefone, :rg, :cpf, :adm_token)";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
+        $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':nome', $this->nome);
+        $stmt->bindValue(':telefone', $this->telefone);
+        $stmt->bindValue(':rg', $this->rg);
+        $stmt->bindValue(':cpf', $this->cpf);
+        $stmt->bindValue(':adm_token', $this->adm_token);
         $stmt->execute();
     }
 
     public function atualizar()
     {
-        $query = "UPDATE categorias set nome = :nome WHERE id = :id";
+        $query = "UPDATE aluno set email = :email, nome = :nome, telefone = :telefone, rg = :rg, cpf = :cpf  WHERE idaluno = :idaluno";
         $conexao = Conexao::pegarConexao();
         $stmt = $conexao->prepare($query);
+        $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':nome', $this->nome);
-        $stmt->bindValue(':id', $this->id);
+        $stmt->bindValue(':telefone', $this->telefone);
+        $stmt->bindValue(':rg', $this->rg);
+        $stmt->bindValue(':cpf', $this->cpf);
+        $stmt->bindValue(':idaluno', $this->idaluno);
         $stmt->execute();
     }
 
@@ -68,10 +81,7 @@ class Aluno
         $stmt->execute();
     }
 
-    public function carregarProdutos()
-    {
-        $this->produtos = Produto::listarPorCategoria($this->id);
-    }
+    
 
 
 
