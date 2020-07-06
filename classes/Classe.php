@@ -19,7 +19,7 @@ class Classe
     public static function listar($x)
     {
         $query = "SELECT cl.idclasse, cl.professor_idprofessor, cl.curso_idcurso, cr.nome, cl.periodo FROM classe cl
-        INNER JOIN curso cr ON cl.curso_idcurso = cr.idcurso WHERE cl.professor_idprofessor = $x ORDER BY cr.nome";
+        INNER JOIN curso cr ON cl.curso_idcurso = cr.idcurso WHERE cl.professor_idprofessor = $x AND cl.status = 0 ORDER BY cr.nome";
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchALL();
