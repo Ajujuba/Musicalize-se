@@ -1,5 +1,5 @@
 <?php require_once 'global.php' ?>
-
+<?php require_once 'verifica-prof.php' ?>
 <?php
      $ids = $_GET['id'];
 ?>
@@ -17,7 +17,7 @@
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 Known Template 
 https://templatemo.com/tm-516-known
@@ -91,7 +91,7 @@ https://templatemo.com/tm-516-known
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="classes/Conexao.php"><i class="fa fa-user-circle"></i> Logout</a></li>
+                         <li><a href="logoutAdm.php"><i class="fa fa-user-circle"></i> Logout</a></li>
                     </ul>
                </div>
 

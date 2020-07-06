@@ -24,10 +24,8 @@ class Professor
 
     public static function listar()
     {
-        $query = "SELECT p.idprofessor, p.nome, p.email, p.cpf, p.telefone, p.curso, c.nome as curso_nome
-        FROM professor p 
-        INNER JOIN curso c ON p.curso = c.idcurso
-        ORDER BY p.nome";
+        $query = "SELECT idprofessor, nome, email, cpf, telefone FROM professor 
+        ORDER BY nome";
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
@@ -94,6 +92,16 @@ class Professor
         $conexao = Conexao::pegarConexao();
         $resultado = $conexao->query($query);
         $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
+    public function validar($email, $senha)
+    {
+        $query = "SELECT * FROM professor
+        WHERE email LIKE '$email' AND senha LIKE '$senha'";
+        $conexao = Conexao::pegarConexao();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetch();
         return $lista;
     }
 

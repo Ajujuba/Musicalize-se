@@ -1,18 +1,19 @@
 <?php require_once 'global.php' ?>
 
+<?php require_once 'verifica-prof.php' ?>
 <?php
-    try {
-        $lista = Classe::listar(2);
-    } catch(Exception $e) {
-        Erro::trataErro($e);
-    }
+     try {
+          $lista = Classe::listar($logado);
+     } catch(Exception $e) {
+          Erro::trataErro($e);
+     }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 
-     <title>Known - Education HTML Template</title>
+     <title>Musicalize-se</title>
 <!-- 
 Known Template 
 https://templatemo.com/tm-516-known
@@ -86,7 +87,7 @@ https://templatemo.com/tm-516-known
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                         <li><a href="classes/Conexao.php"><i class="fa fa-user-circle"></i> Logout</a></li>
+                         <li><a href="logoutAdm.php"><i class="fa fa-user-circle"></i> Logout</a></li>
                     </ul>
                </div>
 
