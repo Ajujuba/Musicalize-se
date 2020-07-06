@@ -106,12 +106,14 @@ https://templatemo.com/tm-516-known
                               <thead>
                                    <tr>
                                         <th>Nome do aluno</th>
+                                        <th>Email do aluno</th>
                                    </tr>
                               </thead>
                               <tbody>
                                    <?php foreach ($lista as $linha): ?>
                                         <tr>
                                         <td><?php echo $linha['nome'] ?></td>
+                                        <td><?php echo $linha['email'] ?></td>
                                         </tr>
                                    <?php endforeach ?>
                               </tbody>
