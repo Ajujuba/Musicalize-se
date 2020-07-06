@@ -15,7 +15,8 @@
             $contato->mensagem = $mensagem;
             $contato->inserir();
     
-            header('Location: index.html');
+            echo "<script>alert('Sua mensagem foi recebida com sucesso!');";
+            echo "javascript:window.location='index.html';</script>";
        
 
 

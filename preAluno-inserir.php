@@ -15,7 +15,8 @@
             $preAluno->telefone = $telefone;
             $preAluno->inserir();
     
-            header('Location: index.html');
+            echo "<script>alert('Sua pré-matrícula foi recebida com sucesso!');";
+            echo "javascript:window.location='index.html';</script>";
        
 
 
