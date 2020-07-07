@@ -188,6 +188,7 @@ https://templatemo.com/tm-516-known
                                    <th>CPF</th>
                                    <th class="acao">Editar</th>
                                    <th class="acao">Excluir</th>
+                                   <th class="acao">Matricular</th>
                               </tr>
                          </thead>
                          <tbody>
@@ -201,6 +202,7 @@ https://templatemo.com/tm-516-known
                                    <td><?php echo $linha['cpf'] ?></td>
                                    <td><a href="aluno-editar.php?id=<?php echo $linha['idaluno']?>" class="btn btn-info">Editar</a></td>
                                    <td><a href="aluno-excluir.php?id=<?php echo $linha['idaluno']?>" class="btn btn-danger">Excluir</a></td>
+                                   <td><a href="matricular.php?id=<?php echo $linha['idaluno']?>" class="btn btn-success">Matricular</a></td>
                                    </tr>
                               <?php endforeach ?>
                          </tbody>
