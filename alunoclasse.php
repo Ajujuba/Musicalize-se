@@ -100,8 +100,11 @@ https://templatemo.com/tm-516-known
 
           <div class="container">
                <div class="row">
+               <br>
+               <center><h3>Lista de alunos</h3></center>
+               <br>
                     <div class="col-md-12">
-                    <br>
+                    <br><br>
                          <table class="table">
                               <thead>
                                    <tr>
