@@ -1,17 +1,13 @@
 <?php require_once 'global.php' ?>
 <?php require_once 'verifica-adm.php' ?>
 <?php
+     $idaluno = $_GET['id'];
     try {
-        $lista = Aluno::listar();
+        $lista = Classe::listarAdm();
     } catch(Exception $e) {
         Erro::trataErro($e);
     }
 
-    try {
-          $listaAdm = Administrador::listar();
-     } catch (Exception $e) {
-          Erro::trataErro($e);
- }
 ?>
 
 <!DOCTYPE html>
@@ -118,62 +114,7 @@ https://templatemo.com/tm-516-known
           <br>
           <div class="col-md-4">
           <br>
-               <form id="contact-form">
-                    <button type="button" name="inserir_curso" class="form-control" data-toggle="modal" data-target="#aluno">
-                            Inserir Aluno
-                    </button>
-                </form> 
-               <!-- Modal -->
-               <div class="modal fade" id="aluno" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                         <div class="modal-content">
-                         <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Adicionar Aluno</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                              <span aria-hidden="true">&times;</span>
-                              </button>
-                         </div>
-                         <div class="modal-body">
-                              <form action="aluno-inserir.php" method="POST">
-                                   <div class="form-group">
-                                        <label for="email">Endereço de email</label>
-                                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Email do aluno" required>
-                                   </div>
-                                   <div class="form-group">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp" placeholder="Nome do aluno" required>
-                                   </div>
-                                   <div class="form-group">
-                                        <label for="telefone">Telefone</label>
-                                        <input type="text" class="form-control phone-ddd-mask" id="telefone" name="telefone" placeholder="Telefone do aluno"  required>
-                                   </div>
-                                   <div class="form-group">
-                                        <label for="telefone">RG</label>
-                                        <input type="text" class="form-control" id="rg" name="rg" placeholder="RG do aluno"  required>
-                                   </div>
-                                   <div class="form-group">
-                                        <label for="telefone">CPF</label>
-                                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF do aluno"  required>
-                                   </div>
-                                   <div class="form-group">
-                                        <label for="email">Administrador Responsável</label>
-                                        <select name="adm_token" id="adm_token">
-                                             <?php foreach ($listaAdm as $linha): ?>
-                                             <option value="<?php echo $linha['token'] ?>"><?php echo $linha['nome'] ?></option>
-                                             <?php endforeach ?>
-                                        </select>
-                                   </div>
-                          </div>
-                                   <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                        <button type="submit" class="btn btn-info">Gravar</button>
-                                   </div>
-                              </form>
-                    </div>
-               </div>
-          </div>
-     </div>
-</div>
+               
      <div class="container">
           <div class="row">
                <div class="col-md-12">
@@ -181,29 +122,21 @@ https://templatemo.com/tm-516-known
                     <table class="table">
                          <thead>
                               <tr>
-                                   <th>Id</th>
-                                   <th>Email</th>
-                                   <th>Nome</th>
-                                   <th>Telefone</th>
-                                   <th>RG</th>
-                                   <th>CPF</th>
-                                   <th class="acao">Editar</th>
-                                   <th class="acao">Excluir</th>
+                                   <th>Id da classe</th>
+                                   <th>Professor</th>
+                                   <th>Curso</th>
+                                   <th>Periodo</th>
                                    <th class="acao">Matricular</th>
                               </tr>
                          </thead>
                          <tbody>
                               <?php foreach ($lista as $linha): ?>
                                    <tr>
-                                   <td><?php echo $linha['idaluno'] ?></td>
-                                   <td><?php echo $linha['email'] ?></td>
-                                   <td><?php echo $linha['nome'] ?></td>
-                                   <td><?php echo $linha['telefone'] ?></td>
-                                   <td><?php echo $linha['rg'] ?></td>
-                                   <td><?php echo $linha['cpf'] ?></td>
-                                   <td><a href="aluno-editar.php?id=<?php echo $linha['idaluno']?>" class="btn btn-info">Editar</a></td>
-                                   <td><a href="aluno-excluir.php?id=<?php echo $linha['idaluno']?>" class="btn btn-danger">Excluir</a></td>
-                                   <td><a href="matricular.php?id=<?php echo $linha['idaluno']?>" class="btn btn-success">Matricular</a></td>
+                                   <td><?php echo $linha['idclasse'] ?></td>
+                                   <td><?php echo $linha['professor_nome'] ?></td>
+                                   <td><?php echo $linha['curso_nome'] ?></td>
+                                   <td><?php echo $linha['periodo'] ?></td>
+                                   <td><a href="matricular-post.php?id=<?php echo $linha['idclasse']?>&ida=<?php echo $idaluno?>" class="btn btn-success">Matricular</a></td>
                                    </tr>
                               <?php endforeach ?>
                          </tbody>

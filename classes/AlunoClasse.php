@@ -14,4 +14,17 @@ class AlunoClasse
         $lista = $resultado->fetchALL();
         return $lista;
     }
+
+    public static function inserir($idaluno,$idclasse)
+    {
+        $query = "INSERT INTO aluno_classe (aluno_idaluno, classe_idclasse) VALUES ($idaluno, $idclasse)";
+        $conexao = Conexao::pegarConexao();
+        $stmt = $conexao->prepare($query);
+        $stmt->execute();
+    }
+
+
 }
+
+
+
