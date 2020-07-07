@@ -105,6 +105,16 @@ class Professor
         return $lista;
     }
 
+    public static function listarProfessor_curso($idcurso){
+        $query = "SELECT p.idprofessor, p.nome AS professor_nome FROM professor p 
+        INNER JOIN professor_curso c ON c.curso_idcurso = $idcurso WHERE p.idprofessor = c.professor_idprofessor AND 
+        c.curso_idcurso = $idcurso ORDER BY nome";
+        $conexao = Conexao::pegarConexao();
+        $resultado = $conexao->query($query);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    }
+
 
 
 }
