@@ -87,10 +87,9 @@ https://templatemo.com/tm-516-known
                     <ul class="nav navbar-nav navbar-nav-first">
                          <li><a href="homeAdm.php" class="smoothScroll">Home</a></li>
                          <li><a href="aluno.php" class="smoothScroll">Alunos</a></li>
-                         <li><a href="aviso.php" class="smoothScroll">Avisos</a></li>
                          <li><a href="curso.php" class="smoothScroll">Cursos</a></li>
                          <li><a href="professor.php" class="smoothScroll">Professores</a></li>
-                         <li><a href="#contact" class="smoothScroll">Classe</a></li>
+                         <li><a href="classe-Adm.php" class="smoothScroll">Classe</a></li>
                          <li><a href="contato.php" class="smoothScroll">Contatos</a></li>
                          <li><a href="preAluno.php" class="smoothScroll">Pré-Matrículas</a></li>
                     </ul>
