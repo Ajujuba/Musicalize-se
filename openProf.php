@@ -36,6 +36,7 @@ if($result  != false)
 else{
   unset ($_SESSION['email']);
   unset ($_SESSION['senha']);
-  header('location:index.html');
+  echo "<script>alert('Email ou senha incorretos!');";
+  echo "javascript:window.location='index.html';</script>";
   }
 ?>

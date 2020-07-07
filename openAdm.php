@@ -33,6 +33,9 @@ if($result  != false)
 else{
   unset ($_SESSION['token']);
   unset ($_SESSION['senha']);
-  header('location:index.html');
+  echo "<script>alert('Token ou senha incorretos!');";
+  echo "javascript:window.location='index.html';</script>";
+       
+
   }
 ?>
