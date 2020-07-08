@@ -109,7 +109,7 @@ https://templatemo.com/tm-516-known
 <div class="container">
     <div class="row">
          <br>
-          <center><h3>Gerenciador de alunos</h3></center>
+          <center><h3>Opções de Classe</h3></center>
           <br>
           <div class="col-md-4">
           <br>
