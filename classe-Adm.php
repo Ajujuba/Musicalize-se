@@ -156,7 +156,7 @@ https://templatemo.com/tm-516-known
                                    <td><?php echo $linha['professor_nome'] ?></td>
                                    <td><?php echo $linha['curso_nome'] ?></td>
                                    <td><?php echo $linha['periodo'] ?></td>
-                                   <td><a href="classe-Adm-editar.php?id=<?php echo $linha['idclasse']?>" class="btn btn-info">Editar</a></td>
+                                   <td><a href="classe-Adm-editar.php?id=<?php echo $linha['idclasse']?>" class="btn btn-info">Desativar</a></td>
                                    </tr>
                               <?php endforeach ?>
                          </tbody>
