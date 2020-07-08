@@ -141,7 +141,7 @@ https://templatemo.com/tm-516-known
 
             
                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <a href="classe-adm-curso.php" class="btn btn-secondary" >Voltar</a>
                                         <button type="submit" class="btn btn-info">Gravar</button>
                                    </div>
                               </form>
