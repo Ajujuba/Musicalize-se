@@ -165,7 +165,7 @@ https://templatemo.com/tm-516-known
                           </div>
                                    <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                        <button type="submit" class="btn btn-info">Gravar</button>
+                                        <button type="submit" class="btn btn-info">Cadastrar</button>
                                    </div>
                               </form>
                     </div>
