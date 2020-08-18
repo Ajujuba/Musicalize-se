@@ -79,10 +79,7 @@ class Curso
         $stmt->execute();
     }
 
-    public function carregarProdutos()
-    {
-        $this->produtos = Produto::listarPorCategoria($this->id);
-    }
+ 
 
 
 

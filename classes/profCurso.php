@@ -7,13 +7,7 @@ class profCurso
     public $curso_idcurso;
 
 
-    // public function __construct($curso_idcurso = false, $professor_idprofessor = false)
-    // {
-    //     if ($professor_idprofessor) {
-    //         $this->idcurso = $idcurso;
-    //         $this->carregar();
-    //     }
-    // }
+
 
     public static function listar($idprofessor)
     {
