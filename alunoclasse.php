@@ -87,7 +87,7 @@ https://templatemo.com/tm-516-known
                <!-- MENU LINKS -->
                <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="" class="smoothScroll">Bem Vindo</a></li>
+                         <li><a href="" class="smoothScroll">Bem-Vindo</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
